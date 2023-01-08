@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*-
-# author: itimor
-
 import platform
 from .base import *
+import pymysql
+pymysql.version_info = (1, 3, 13, "final", 0)
+pymysql.install_as_MySQLdb()
+
 
 os_type = platform.system()
 

@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-# author: itimor
-
 import os
+
 
 APP_ENV = 'dev'
 
@@ -17,27 +15,26 @@ ALLOWED_HOSTS = ['*']
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # sqlite
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../core.db'),
-    }
-}
-
-# mysql
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'one',
-#         'USER': 'root',
-#         'PASSWORD': 'momo520',
-#         'HOST': '1.1.1.11',
-#         'OPTIONS': {
-#             "init_command": "SET foreign_key_checks=0;",
-#         }
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, '../core.db'),
 #     }
 # }
 
-# 加载 mysql
-# import pymysql
-# pymysql.install_as_MySQLdb()
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS':{'read_default_file': os.path.join(BASE_DIR, 'database.cnf'),}
+        #数据库名
+        # 'NAME' : 'csdn',
+        # 'USER' : 'lmapp',
+        # 'PASSWORD' : 'lmapp',
+        # 'HOST' : '127.0.0.1',
+        # 'PORT' : '8088',
+    }
+}

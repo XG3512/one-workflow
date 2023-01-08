@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-# author: itimor
 
 import os
 import sys
