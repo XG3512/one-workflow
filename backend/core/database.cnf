@@ -1,0 +1,7 @@
+[client]
+database = 'fix'
+user = 'root'
+password = '123321456'
+default-character-set = utf8
+host = '124.221.110.184'
+port = 3306
